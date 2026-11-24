@@ -30,16 +30,16 @@ The solution (`BookstorePOS.slnx`) separates responsibilities into four projects
 ## Screenshots
 
 ### Inventory Management & Low-Stock Alerts
-![Inventory](docs/screenshots/1795560488079_Inventary.png)
+![Inventory](docs/screenshots/inventory.png)
 
 ### Point of Sale — Live Search & Cart
-![POS search](docs/screenshots/1795560488079_Search_Test.png)
+![POS search](docs/screenshots/pos-search.png)
 
 ### Point of Sale — Checkout
-![POS checkout](docs/screenshots/1795560488079_Complete-Sale.png)
+![POS checkout](docs/screenshots/pos-checkout.png)
 
 ### Sales History & Master–Detail View
-![Sales history](docs/screenshots/1795560488078_Sale_History.png)
+![Sales history](docs/screenshots/sales-history.png)
 
 ## Setup & Installation
 
@@ -57,7 +57,7 @@ The solution (`BookstorePOS.slnx`) separates responsibilities into four projects
    git clone https://github.com/Hans-Rafael/bookstore-pos-winforms.git
    ```
 
-2. **Create the database:** open `database.sql` in SQL Server Management Studio (SSMS) or Visual Studio's SQL editor, connected to `(localdb)\MSSQLLocalDB`, and execute the script to create `BookstoreDB` and seed the sample data.
+2. **Create the database:** open `database.sql` (in the repository root) in SQL Server Management Studio (SSMS) or Visual Studio's SQL editor, connected to `(localdb)\MSSQLLocalDB`, and execute it. The script creates `BookstoreDB`, its four tables (`Categories`, `Books`, `Sales`, `SaleDetails`) and inserts sample categories and books.
 
 3. **Verify the connection string:** open `BookstorePOS.UI/App.config` and confirm that the `BookstoreDB` connection string matches your local SQL Server instance:
 
