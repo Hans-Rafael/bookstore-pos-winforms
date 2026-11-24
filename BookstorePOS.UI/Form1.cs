@@ -44,7 +44,14 @@ namespace BookstorePOS.UI
         {
             LoadBooks(txtSearch.Text.Trim());
         }
-
+        private void btnOpenPOS_Click(object sender, EventArgs e)
+        {
+            using (var pos = new FrmPOS())
+            {
+                pos.ShowDialog();
+            }
+            LoadBooks(txtSearch.Text.Trim());
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -156,6 +163,11 @@ namespace BookstorePOS.UI
         }
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

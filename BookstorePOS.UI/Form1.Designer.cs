@@ -48,6 +48,7 @@
             label4 = new Label();
             label1 = new Label();
             label2 = new Label();
+            btnOpenPOS = new Button();
             ((System.ComponentModel.ISupportInitialize)numStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numMinStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
@@ -118,11 +119,12 @@
             // numMinStock
             // 
             numMinStock.Location = new Point(12, 361);
-            numMinStock.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            numMinStock.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
             numMinStock.Name = "numMinStock";
             numMinStock.Size = new Size(135, 23);
             numMinStock.TabIndex = 7;
             numMinStock.UseWaitCursor = true;
+            numMinStock.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // btnSave
             // 
@@ -225,9 +227,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(15, 233);
             label3.Name = "label3";
-            label3.Size = new Size(32, 15);
+            label3.Size = new Size(50, 15);
             label3.TabIndex = 11;
-            label3.Text = "ISBN";
+            label3.Text = "Price ($)";
             label3.UseWaitCursor = true;
             // 
             // label4
@@ -235,9 +237,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(15, 343);
             label4.Name = "label4";
-            label4.Size = new Size(32, 15);
+            label4.Size = new Size(60, 15);
             label4.TabIndex = 11;
-            label4.Text = "ISBN";
+            label4.Text = "Min Stock";
             label4.UseWaitCursor = true;
             // 
             // label1
@@ -245,20 +247,34 @@
             label1.AutoSize = true;
             label1.Location = new Point(15, 176);
             label1.Name = "label1";
-            label1.Size = new Size(44, 15);
+            label1.Size = new Size(55, 15);
             label1.TabIndex = 12;
-            label1.Text = "Author";
+            label1.Text = "Category";
             label1.UseWaitCursor = true;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(15, 286);
             label2.Name = "label2";
-            label2.Size = new Size(32, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 13;
-            label2.Text = "ISBN";
+            label2.Text = "Stock";
             label2.UseWaitCursor = true;
+            // 
+            // btnOpenPOS
+            // 
+            btnOpenPOS.BackColor = SystemColors.Highlight;
+            btnOpenPOS.ForeColor = SystemColors.ButtonHighlight;
+            btnOpenPOS.Location = new Point(623, 32);
+            btnOpenPOS.Name = "btnOpenPOS";
+            btnOpenPOS.Size = new Size(135, 35);
+            btnOpenPOS.TabIndex = 8;
+            btnOpenPOS.Text = "OpenPOS";
+            btnOpenPOS.UseVisualStyleBackColor = false;
+            btnOpenPOS.UseWaitCursor = true;
+            btnOpenPOS.Click += btnSave_Click;
             // 
             // FrmInventory
             // 
@@ -276,6 +292,7 @@
             Controls.Add(dgvBooks);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
+            Controls.Add(btnOpenPOS);
             Controls.Add(btnSave);
             Controls.Add(numMinStock);
             Controls.Add(numStock);
@@ -319,5 +336,6 @@
         private Label label4;
         private Label label1;
         private Label label2;
+        private Button btnOpenPOS;
     }
 }
