@@ -37,5 +37,19 @@ namespace Dal
 
             return list;
         }
+        public void Insert(Category category)
+        {
+            using (SqlConnection conn = _db.GetConnection())
+            {
+                conn.Open();
+                string query = "INSERT INTO Categories (Name) VALUES (@Name);";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Name", category.Name);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
