@@ -62,7 +62,6 @@
             cmbCategories.Name = "cmbCategories";
             cmbCategories.Size = new Size(135, 23);
             cmbCategories.TabIndex = 0;
-            cmbCategories.UseWaitCursor = true;
             // 
             // txtSearch
             // 
@@ -72,7 +71,6 @@
             txtSearch.PlaceholderText = "Search (Title, Author, ISBN)...";
             txtSearch.Size = new Size(390, 23);
             txtSearch.TabIndex = 1;
-            txtSearch.UseWaitCursor = true;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // txtISBN
@@ -81,7 +79,7 @@
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(135, 23);
             txtISBN.TabIndex = 2;
-            txtISBN.UseWaitCursor = true;
+            
             // 
             // txtTitle
             // 
@@ -89,7 +87,7 @@
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(135, 23);
             txtTitle.TabIndex = 3;
-            txtTitle.UseWaitCursor = true;
+            
             // 
             // txtAuthor
             // 
@@ -97,7 +95,7 @@
             txtAuthor.Name = "txtAuthor";
             txtAuthor.Size = new Size(135, 23);
             txtAuthor.TabIndex = 4;
-            txtAuthor.UseWaitCursor = true;
+            
             // 
             // txtPrice
             // 
@@ -105,7 +103,7 @@
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(135, 23);
             txtPrice.TabIndex = 5;
-            txtPrice.UseWaitCursor = true;
+            
             // 
             // numStock
             // 
@@ -114,7 +112,7 @@
             numStock.Name = "numStock";
             numStock.Size = new Size(135, 23);
             numStock.TabIndex = 6;
-            numStock.UseWaitCursor = true;
+            
             // 
             // numMinStock
             // 
@@ -123,7 +121,6 @@
             numMinStock.Name = "numMinStock";
             numMinStock.Size = new Size(135, 23);
             numMinStock.TabIndex = 7;
-            numMinStock.UseWaitCursor = true;
             numMinStock.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // btnSave
@@ -136,7 +133,6 @@
             btnSave.TabIndex = 8;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
-            btnSave.UseWaitCursor = true;
             btnSave.Click += btnSave_Click;
             // 
             // btnClear
@@ -149,7 +145,6 @@
             btnClear.TabIndex = 8;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
-            btnClear.UseWaitCursor = true;
             btnClear.Click += btnClear_Click;
             // 
             // btnDelete
@@ -162,7 +157,6 @@
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Deactivate";
             btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.UseWaitCursor = true;
             btnDelete.Click += btnDelete_Click;
             // 
             // dgvBooks
@@ -177,7 +171,6 @@
             dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBooks.Size = new Size(616, 388);
             dgvBooks.TabIndex = 9;
-            dgvBooks.UseWaitCursor = true;
             dgvBooks.CellClick += dgvBooks_CellClick;
             dgvBooks.CellFormatting += dgvBooks_CellFormatting;
             // 
@@ -189,7 +182,6 @@
             splitter1.Size = new Size(156, 531);
             splitter1.TabIndex = 10;
             splitter1.TabStop = false;
-            splitter1.UseWaitCursor = true;
             splitter1.SplitterMoved += splitter1_SplitterMoved;
             // 
             // lblISBN
@@ -200,7 +192,6 @@
             lblISBN.Size = new Size(32, 15);
             lblISBN.TabIndex = 11;
             lblISBN.Text = "ISBN";
-            lblISBN.UseWaitCursor = true;
             // 
             // lblTitle
             // 
@@ -210,7 +201,6 @@
             lblTitle.Size = new Size(29, 15);
             lblTitle.TabIndex = 11;
             lblTitle.Text = "Title";
-            lblTitle.UseWaitCursor = true;
             // 
             // lblAuthor
             // 
@@ -220,7 +210,6 @@
             lblAuthor.Size = new Size(44, 15);
             lblAuthor.TabIndex = 11;
             lblAuthor.Text = "Author";
-            lblAuthor.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -230,7 +219,6 @@
             label3.Size = new Size(50, 15);
             label3.TabIndex = 11;
             label3.Text = "Price ($)";
-            label3.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -240,7 +228,6 @@
             label4.Size = new Size(60, 15);
             label4.TabIndex = 11;
             label4.Text = "Min Stock";
-            label4.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -250,7 +237,6 @@
             label1.Size = new Size(55, 15);
             label1.TabIndex = 12;
             label1.Text = "Category";
-            label1.UseWaitCursor = true;
             label1.Click += label1_Click;
             // 
             // label2
@@ -261,7 +247,6 @@
             label2.Size = new Size(36, 15);
             label2.TabIndex = 13;
             label2.Text = "Stock";
-            label2.UseWaitCursor = true;
             // 
             // btnOpenPOS
             // 
@@ -273,8 +258,7 @@
             btnOpenPOS.TabIndex = 8;
             btnOpenPOS.Text = "OpenPOS";
             btnOpenPOS.UseVisualStyleBackColor = false;
-            btnOpenPOS.UseWaitCursor = true;
-            btnOpenPOS.Click += btnSave_Click;
+            btnOpenPOS.Click += btnOpenPOS_Click;
             // 
             // FrmInventory
             // 
@@ -305,7 +289,6 @@
             Controls.Add(splitter1);
             Name = "FrmInventory";
             Text = "FrmInventory.cs";
-            UseWaitCursor = true;
             Load += FrmInventory_Load;
             ((System.ComponentModel.ISupportInitialize)numStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMinStock).EndInit();

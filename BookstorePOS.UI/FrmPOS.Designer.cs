@@ -31,18 +31,17 @@
             lblNumQuntity = new Label();
             lblCart = new Label();
             splitContainer1 = new SplitContainer();
+            lblCatalog = new Label();
+            btnAddToCart = new Button();
             numQuantity = new NumericUpDown();
             dgvCatalog = new DataGridView();
-            label4 = new Label();
+            lblSearch = new Label();
             txtSearchBook = new TextBox();
-            btnAddToCart = new Button();
-            lblCatalog = new Label();
-            dgvCart = new DataGridView();
-            btnRemoveItem = new Button();
             cmbPaymentMethod = new ComboBox();
-            lblTotal = new Label();
+            dgvCart = new DataGridView();
             btnCompleteSale = new Button();
-            dataGridView = new DataGridView();
+            btnRemoveItem = new Button();
+            lblTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -50,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCatalog).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // lblNumQuntity
@@ -83,7 +81,7 @@
             splitContainer1.Panel1.Controls.Add(btnAddToCart);
             splitContainer1.Panel1.Controls.Add(numQuantity);
             splitContainer1.Panel1.Controls.Add(dgvCatalog);
-            splitContainer1.Panel1.Controls.Add(label4);
+            splitContainer1.Panel1.Controls.Add(lblSearch);
             splitContainer1.Panel1.Controls.Add(txtSearchBook);
             splitContainer1.Panel1.Controls.Add(lblNumQuntity);
             // 
@@ -99,6 +97,27 @@
             splitContainer1.Size = new Size(800, 394);
             splitContainer1.SplitterDistance = 266;
             splitContainer1.TabIndex = 2;
+            // 
+            // lblCatalog
+            // 
+            lblCatalog.AutoSize = true;
+            lblCatalog.Location = new Point(22, 83);
+            lblCatalog.Name = "lblCatalog";
+            lblCatalog.Size = new Size(48, 15);
+            lblCatalog.TabIndex = 6;
+            lblCatalog.Text = "Catalog";
+            // 
+            // btnAddToCart
+            // 
+            btnAddToCart.BackColor = Color.OliveDrab;
+            btnAddToCart.ForeColor = SystemColors.ButtonHighlight;
+            btnAddToCart.Location = new Point(50, 342);
+            btnAddToCart.Name = "btnAddToCart";
+            btnAddToCart.Size = new Size(135, 35);
+            btnAddToCart.TabIndex = 5;
+            btnAddToCart.Text = "AddToCart";
+            btnAddToCart.UseVisualStyleBackColor = false;
+            btnAddToCart.Click += btnAddToCart_Click;
             // 
             // numQuantity
             // 
@@ -117,14 +136,14 @@
             dgvCatalog.Size = new Size(240, 150);
             dgvCatalog.TabIndex = 3;
             // 
-            // label4
+            // lblSearch
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(22, 26);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 1;
-            label4.Text = "label1";
+            lblSearch.AutoSize = true;
+            lblSearch.Location = new Point(22, 26);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(42, 15);
+            lblSearch.TabIndex = 1;
+            lblSearch.Text = "Search";
             // 
             // txtSearchBook
             // 
@@ -132,48 +151,7 @@
             txtSearchBook.Name = "txtSearchBook";
             txtSearchBook.Size = new Size(173, 23);
             txtSearchBook.TabIndex = 2;
-            txtSearchBook.TextChanged += this.txtSearchBook_TextChanged;
-            // 
-            // btnAddToCart
-            // 
-            btnAddToCart.BackColor = Color.OliveDrab;
-            btnAddToCart.ForeColor = SystemColors.ButtonHighlight;
-            btnAddToCart.Location = new Point(50, 342);
-            btnAddToCart.Name = "btnAddToCart";
-            btnAddToCart.Size = new Size(135, 35);
-            btnAddToCart.TabIndex = 5;
-            btnAddToCart.Text = "AddToCart";
-            btnAddToCart.UseVisualStyleBackColor = false;
-            btnAddToCart.Click += this.btnAddToCart_Click;
-            // 
-            // lblCatalog
-            // 
-            lblCatalog.AutoSize = true;
-            lblCatalog.Location = new Point(22, 83);
-            lblCatalog.Name = "lblCatalog";
-            lblCatalog.Size = new Size(48, 15);
-            lblCatalog.TabIndex = 6;
-            lblCatalog.Text = "Catalog";
-            // 
-            // dgvCart
-            // 
-            dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCart.Location = new Point(24, 44);
-            dgvCart.Name = "dgvCart";
-            dgvCart.Size = new Size(240, 150);
-            dgvCart.TabIndex = 2;
-            // 
-            // btnRemoveItem
-            // 
-            btnRemoveItem.BackColor = Color.Chocolate;
-            btnRemoveItem.ForeColor = SystemColors.ButtonHighlight;
-            btnRemoveItem.Location = new Point(297, 44);
-            btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(135, 35);
-            btnRemoveItem.TabIndex = 5;
-            btnRemoveItem.Text = "RemoveItem";
-            btnRemoveItem.UseVisualStyleBackColor = false;
-            btnRemoveItem.Click += this.btnRemoveItem_Click;
+            txtSearchBook.TextChanged += txtSearchBook_TextChanged;
             // 
             // cmbPaymentMethod
             // 
@@ -184,14 +162,13 @@
             cmbPaymentMethod.Size = new Size(121, 23);
             cmbPaymentMethod.TabIndex = 6;
             // 
-            // lblTotal
+            // dgvCart
             // 
-            lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(65, 222);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(65, 15);
-            lblTotal.TabIndex = 1;
-            lblTotal.Text = "Total: $0.00";
+            dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCart.Location = new Point(24, 44);
+            dgvCart.Name = "dgvCart";
+            dgvCart.Size = new Size(240, 150);
+            dgvCart.TabIndex = 2;
             // 
             // btnCompleteSale
             // 
@@ -203,31 +180,40 @@
             btnCompleteSale.TabIndex = 5;
             btnCompleteSale.Text = "CompleteSale";
             btnCompleteSale.UseVisualStyleBackColor = false;
-            btnCompleteSale.Click += this.btnCompleteSale_Click;
+            btnCompleteSale.Click += btnCompleteSale_Click;
             // 
-            // dataGridView
+            // btnRemoveItem
             // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(31, 423);
-            dataGridView.MultiSelect = false;
-            dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.Size = new Size(690, 150);
-            dataGridView.TabIndex = 7;
+            btnRemoveItem.BackColor = Color.Chocolate;
+            btnRemoveItem.ForeColor = SystemColors.ButtonHighlight;
+            btnRemoveItem.Location = new Point(297, 44);
+            btnRemoveItem.Name = "btnRemoveItem";
+            btnRemoveItem.Size = new Size(135, 35);
+            btnRemoveItem.TabIndex = 5;
+            btnRemoveItem.Text = "RemoveItem";
+            btnRemoveItem.UseVisualStyleBackColor = false;
+            btnRemoveItem.Click += btnRemoveItem_Click;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI Semibold", 25F);
+            lblTotal.ForeColor = SystemColors.HotTrack;
+            lblTotal.Location = new Point(40, 205);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(196, 46);
+            lblTotal.TabIndex = 1;
+            lblTotal.Text = "Total: $0.00";
             // 
             // FrmPOS
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(816, 624);
-            Controls.Add(dataGridView);
+            ClientSize = new Size(809, 405);
             Controls.Add(splitContainer1);
             Name = "FrmPOS";
             Text = "Form2";
-            Load += this.FrmPOS_Load;
+            Load += FrmPOS_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -237,7 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)numQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCatalog).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCart).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -257,7 +242,7 @@
         private ComboBox cmbPaymentMethod;
         private Button btnRemoveItem;
         private Label lblTotal;
-        private DataGridView dataGridView;
         private Button btnCompleteSale;
+        private Label lblSearch;
     }
 }
