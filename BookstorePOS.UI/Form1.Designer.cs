@@ -49,6 +49,7 @@
             label1 = new Label();
             label2 = new Label();
             btnOpenPOS = new Button();
+            btnSalesHistory = new Button();
             ((System.ComponentModel.ISupportInitialize)numStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numMinStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
@@ -79,7 +80,6 @@
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(135, 23);
             txtISBN.TabIndex = 2;
-            
             // 
             // txtTitle
             // 
@@ -87,7 +87,6 @@
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(135, 23);
             txtTitle.TabIndex = 3;
-            
             // 
             // txtAuthor
             // 
@@ -95,7 +94,6 @@
             txtAuthor.Name = "txtAuthor";
             txtAuthor.Size = new Size(135, 23);
             txtAuthor.TabIndex = 4;
-            
             // 
             // txtPrice
             // 
@@ -103,7 +101,6 @@
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(135, 23);
             txtPrice.TabIndex = 5;
-            
             // 
             // numStock
             // 
@@ -112,7 +109,6 @@
             numStock.Name = "numStock";
             numStock.Size = new Size(135, 23);
             numStock.TabIndex = 6;
-            
             // 
             // numMinStock
             // 
@@ -252,7 +248,7 @@
             // 
             btnOpenPOS.BackColor = SystemColors.Highlight;
             btnOpenPOS.ForeColor = SystemColors.ButtonHighlight;
-            btnOpenPOS.Location = new Point(623, 32);
+            btnOpenPOS.Location = new Point(594, 32);
             btnOpenPOS.Name = "btnOpenPOS";
             btnOpenPOS.Size = new Size(135, 35);
             btnOpenPOS.TabIndex = 8;
@@ -260,12 +256,25 @@
             btnOpenPOS.UseVisualStyleBackColor = false;
             btnOpenPOS.Click += btnOpenPOS_Click;
             // 
+            // btnSalesHistory
+            // 
+            btnSalesHistory.BackColor = SystemColors.ActiveCaption;
+            btnSalesHistory.ForeColor = SystemColors.ControlText;
+            btnSalesHistory.Location = new Point(172, 65);
+            btnSalesHistory.Name = "btnSalesHistory";
+            btnSalesHistory.Size = new Size(135, 35);
+            btnSalesHistory.TabIndex = 14;
+            btnSalesHistory.Text = "Sales History";
+            btnSalesHistory.UseVisualStyleBackColor = false;
+            btnSalesHistory.Click += btnSalesHistory_Click;
+            // 
             // FrmInventory
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 531);
+            Controls.Add(btnSalesHistory);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label4);
@@ -320,5 +329,6 @@
         private Label label1;
         private Label label2;
         private Button btnOpenPOS;
+        private Button btnSalesHistory;
     }
 }

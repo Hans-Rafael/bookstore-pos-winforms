@@ -23,5 +23,14 @@ namespace BLL
 
             return _saleDal.RegisterSale(sale);
         }
+        public List<Sale> GetSalesByDate(DateTime from, DateTime to)
+        {
+            if (from.Date > to.Date)
+                throw new ArgumentException("Start date cannot be greater than end date.");
+
+            return _saleDal.GetSalesByDate(from, to);
+        }
+
+        public List<SaleDetail> GetSaleDetails(int saleId) => _saleDal.GetSaleDetails(saleId);
     }
 }

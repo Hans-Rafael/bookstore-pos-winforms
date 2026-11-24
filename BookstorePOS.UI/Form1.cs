@@ -171,5 +171,15 @@ namespace BookstorePOS.UI
         {
 
         }
+
+        private void btnSalesHistory_Click(object sender, EventArgs e)
+        {
+            using (var history = new FrmSalesHistory())
+            {
+                history.ShowDialog();
+
+            }
+
+        }
     }
 }

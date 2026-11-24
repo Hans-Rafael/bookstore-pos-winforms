@@ -233,12 +233,10 @@
         private SplitContainer splitContainer1;
         private NumericUpDown numQuantity;
         private DataGridView dgvCatalog;
-        private Label label4;
         private TextBox txtSearchBook;
         private Label lblCatalog;
         private Button btnAddToCart;
         private DataGridView dgvCart;
-        private Button button1;
         private ComboBox cmbPaymentMethod;
         private Button btnRemoveItem;
         private Label lblTotal;

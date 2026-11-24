@@ -74,5 +74,79 @@ namespace Dal
                 }
             }
         }
+        public List<Sale> GetSalesByDate(DateTime from, DateTime to)
+        {
+            var list = new List<Sale>();
+
+            using (SqlConnection conn = _db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT SaleId, SaleDate, TotalAmount, PaymentMethod
+            FROM Sales
+            WHERE CAST(SaleDate AS DATE) BETWEEN @From AND @To
+            ORDER BY SaleDate DESC;";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@From", from.Date);
+                    cmd.Parameters.AddWithValue("@To", to.Date);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new Sale
+                            {
+                                SaleId = Convert.ToInt32(reader["SaleId"]),
+                                SaleDate = Convert.ToDateTime(reader["SaleDate"]),
+                                TotalAmount = Convert.ToDecimal(reader["TotalAmount"]),
+                                PaymentMethod = reader["PaymentMethod"].ToString() ?? string.Empty
+                            });
+                        }
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        public List<SaleDetail> GetSaleDetails(int saleId)
+        {
+            var list = new List<SaleDetail>();
+
+            using (SqlConnection conn = _db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT sd.SaleDetailId, sd.SaleId, sd.BookId, b.Title AS BookTitle, sd.Quantity, sd.UnitPrice
+            FROM SaleDetails sd
+            INNER JOIN Books b ON sd.BookId = b.BookId
+            WHERE sd.SaleId = @SaleId;";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SaleId", saleId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new SaleDetail
+                            {
+                                SaleDetailId = Convert.ToInt32(reader["SaleDetailId"]),
+                                SaleId = Convert.ToInt32(reader["SaleId"]),
+                                BookId = Convert.ToInt32(reader["BookId"]),
+                                BookTitle = reader["BookTitle"].ToString() ?? string.Empty,
+                                Quantity = Convert.ToInt32(reader["Quantity"]),
+                                UnitPrice = Convert.ToDecimal(reader["UnitPrice"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return list;
+        }
     }
 }
