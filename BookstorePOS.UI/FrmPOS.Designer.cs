@@ -212,7 +212,7 @@
             ClientSize = new Size(809, 405);
             Controls.Add(splitContainer1);
             Name = "FrmPOS";
-            Text = "Form2";
+            Text = "POS";
             Load += FrmPOS_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();

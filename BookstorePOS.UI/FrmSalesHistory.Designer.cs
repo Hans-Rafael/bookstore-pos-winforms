@@ -53,14 +53,14 @@
             // 
             // btnFilter
             // 
-            btnFilter.Location = new Point(466, 64);
+            btnFilter.Location = new Point(454, 61);
             btnFilter.Margin = new Padding(5, 6, 5, 6);
             btnFilter.Name = "btnFilter";
             btnFilter.Size = new Size(129, 46);
             btnFilter.TabIndex = 1;
             btnFilter.Text = "Filter";
             btnFilter.UseVisualStyleBackColor = true;
-            btnFilter.Click += this.FrmSalesHistory_Load;
+            btnFilter.Click += FrmSalesHistory_Load;
             // 
             // lblTotalRevenue
             // 
@@ -76,16 +76,16 @@
             // dgvSales
             // 
             dgvSales.AllowUserToAddRows = false;
-            dgvSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSales.Location = new Point(14, 224);
             dgvSales.MultiSelect = false;
             dgvSales.Name = "dgvSales";
             dgvSales.ReadOnly = true;
             dgvSales.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSales.Size = new Size(581, 150);
+            dgvSales.Size = new Size(709, 150);
             dgvSales.TabIndex = 3;
-           
+            dgvSales.CellClick += dgvSales_CellClick;
             // 
             // dtpTo
             // 
@@ -116,14 +116,14 @@
             // dgvSaleDetails
             // 
             dgvSaleDetails.AllowUserToAddRows = false;
-            dgvSaleDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSaleDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvSaleDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSaleDetails.Location = new Point(12, 421);
             dgvSaleDetails.MultiSelect = false;
             dgvSaleDetails.Name = "dgvSaleDetails";
             dgvSaleDetails.ReadOnly = true;
             dgvSaleDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSaleDetails.Size = new Size(583, 150);
+            dgvSaleDetails.Size = new Size(711, 150);
             dgvSaleDetails.TabIndex = 7;
             // 
             // lblSales
@@ -148,7 +148,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(735, 900);
+            ClientSize = new Size(747, 900);
             Controls.Add(lblSaleDetail);
             Controls.Add(lblSales);
             Controls.Add(dgvSaleDetails);
@@ -162,8 +162,8 @@
             Font = new Font("Segoe UI", 16F);
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmSalesHistory";
-            Text = "Form2";
-            Load += this.FrmSalesHistory_Load;
+            Text = "BookstorePOS - Sales History";
+            Load += FrmSalesHistory_Load;
             ((System.ComponentModel.ISupportInitialize)dgvSales).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvSaleDetails).EndInit();
             ResumeLayout(false);

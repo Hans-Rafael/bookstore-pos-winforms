@@ -297,7 +297,7 @@
             Controls.Add(cmbCategories);
             Controls.Add(splitter1);
             Name = "FrmInventory";
-            Text = "FrmInventory.cs";
+            Text = "Inventory";
             Load += FrmInventory_Load;
             ((System.ComponentModel.ISupportInitialize)numStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMinStock).EndInit();
