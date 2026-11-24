@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            cmbCategories = new ComboBox();
+            SuspendLayout();
+            // 
+            // cmbCategories
+            // 
+            cmbCategories.FormattingEnabled = true;
+            cmbCategories.Location = new Point(77, 75);
+            cmbCategories.Name = "cmbCategories";
+            cmbCategories.Size = new Size(135, 23);
+            cmbCategories.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbCategories);
+            Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ComboBox cmbCategories;
     }
 }
